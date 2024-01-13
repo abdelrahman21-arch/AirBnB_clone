@@ -12,8 +12,8 @@ from models.review import Review
 from models.state import State
 from models.user import User
 
-classes = {"Amenity": Amenity, "BaseModel": BaseModel, "City": City,
-           "Place": Place, "Review": Review, "State": State, "User": User}
+clss = {"Amenity": Amenity, "BaseModel": BaseModel, "City": City,
+        "Place": Place, "Review": Review, "State": State, "User": User}
 
 
 class FileStorage:
@@ -46,6 +46,6 @@ class FileStorage:
             with open(self.__file_path, 'r') as f:
                 objs = json.load(f)
             for key in objs:
-                self.__objects[key] = classes[objs[key]["__class__"]](**objs[key])
-        except:
+                self.__objects[key] = clss[objs[key]["__class__"]](**objs[key])
+        except Exception:
             pass

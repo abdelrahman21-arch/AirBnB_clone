@@ -27,6 +27,7 @@ class HBNBCommand(cmd.Cmd):
         "State": State,
         "City": City
         }
+
     def emptyline(self):
         """do nothing when enter empty"""
         pass
@@ -254,6 +255,7 @@ class HBNBCommand(cmd.Cmd):
         frmt = className + frmt
         if (cmd in validCmd.keys()):
             validCmd[cmd](frmt.strip())
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

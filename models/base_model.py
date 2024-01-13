@@ -32,7 +32,7 @@ class BaseModel:
     def __str__(self):
         """override srting function"""
         return "[{}] ({}) {}".format(self.__class__.__name__, self.id,
-                                         self.__dict__)
+                                     self.__dict__)
 
     def save(self):
         """update and save"""
